@@ -2,7 +2,7 @@
 
 Projeto educativo para introdução do uso de APIs
 
-## Teoria aula 10/11/2022
+## Teoria aula 11/11/2022
 
 ### URL - localizador uniforme de recursos
 - https://dadosabertos.camara.leg.br/api/v2/deputados
