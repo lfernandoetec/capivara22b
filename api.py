@@ -10,9 +10,16 @@ domain = 'https://dadosabertos.camara.leg.br/api/v2/'
 path = 'deputados'
 # endereco a ser pesquisado
 url = domain + path
+# parametros
+params = {'nome': '', 'ordem': 'asc', 'ordenarPor': 'id'}
+params['nome'] = input('qual o nome do deputado:')
 # faz um get no site dados abertos da camara e obtem a listagem dos deputados
-r = requests.get(url)
+r = requests.get(url,params)
 # imprime o status code
 print(r.status_code)
 # imprime o conteudo json formatado pra ficar bonito com a pprint
-bunitinho(r.json())
+#bunitinho(r.json())
+data = r.json()
+# imprime somente o nome e o id do deputado
+for deputado in data['dados']:
+    print('nome:',deputado['nome'],' id:',deputado['id'])
