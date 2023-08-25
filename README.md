@@ -1,35 +1,26 @@
-# Projeto Capivara 2022 Turma B
+# oladjango23b
 
-Projeto educativo para introdução do uso de APIs
-
-## Teoria aula 11/11/2022
-
-### URL - localizador uniforme de recursos
-- https://dadosabertos.camara.leg.br/api/v2/deputados
-
-- protocolo - https://
-
-### dominio - dadosabertos.camara.leg.br
-
-- sub-dominio - dadosabertos
-- dominio - camara.leg.br
-
-### TLD - leg.br
-- leg - legislativo
-- br - brasil
-
-- path - /api/v2/deputados
-
-
-[Fonte da imagem](https://raventools.com/marketing-glossary/top-level-domain/)
-![URL](https://raventools.com/marketing-glossary/wp-content/uploads/2016/02/URL_Parts.png)
-
-## Teoria aula 18/11/2022
-
-### query string
-- par chave valor separado por =
-- inicia com ?
-- separado por &
-- sempre no fim da url
-- chamado tambem de query parameters
-- utilizamos um dicionario em python para representar
+## Comandos (03/03/2023)
+- criar um projeto
+    - python -m django startproject itapira
+- entrar na pasta do manage.py
+    - cd itapira
+- criar uma app
+    - python manage.py startapp enquete
+- iniciar o servidor
+    - python manage.py runserver
+- mostra as bibliotecas instaladas pelo gerenciador de pacotes pip
+    - pip freeze
+- cria a lista de dependencias
+    - pip freeze > requirements.txt
+- instala as dependencias
+    - pip install -r requirements.txt
+- Executar migrações iniciais
+    - cd itapira
+    - python manage.py migrate
+- Criar super usuário
+    - cd itapira
+    - python manage.py createsuperuser
+    - usuario admin
+    - senha 123mudar
+    - email luisfernando.silva@etec.sp.gov.br

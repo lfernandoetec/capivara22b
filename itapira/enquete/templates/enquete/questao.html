@@ -1,0 +1,39 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="{% static '/css/bootstrap.min.css' %}" rel="stylesheet">
+  </head>
+  <body class="bg-danger">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="mt-4 p-5 bg-primary text-white rounded">
+                    <h1>Pergunta do dia</h1>
+                    <img src="{% static '/img/logo.jpg' %}" alt="logo" class="img-fluid" style="max-width: 200px;">
+                    <p>tente adivinhar</p>
+                </div>
+                <form action="{% url 'voto' questao.id %}" method="post">
+                  {% csrf_token %}
+                  <fieldset>
+                      <legend><h1>{{ questao.pergunta }}</h1></legend>
+                      {% if error_message %}
+                          <p><strong>{{ error_message }}</strong></p>
+                      {% endif %}
+                      {% for respostas in questao.resposta_set.all %}
+                          <input type="radio" name="resposta" id="resposta{{ forloop.counter }}" value="{{ respostas.id }}">
+                          <label for="resposta{{ forloop.counter }}">{{ respostas.resposta }}</label><br>
+                      {% endfor %}
+                  </fieldset>
+                  <input type="submit" value="Votar">
+                  </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="{% static '/js/bootstrap.bundle.min.js' %}"></script>
+  </body>
+</html>
